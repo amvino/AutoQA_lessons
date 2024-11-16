@@ -9,7 +9,6 @@ orders = [
 
 
 def validate_orders(orders):
-
     valid_order = []
    
     for order in orders:
@@ -38,16 +37,3 @@ def validate_orders(orders):
 
 
 validate_orders(orders)
-
-
-
-
-
-
-
-
-
-
-
-
-
