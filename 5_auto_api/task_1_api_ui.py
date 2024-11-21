@@ -23,8 +23,8 @@ def get_rate_front():
         driver = webdriver.Chrome()
         driver.get('https://x-rates.com/')
         driver.find_element(By.ID,'amount').send_keys('1')
-        driver.find_element(By.ID,'from').send_keys('EUR - Euro')
-        driver.find_element(By.ID,'to').send_keys('USD - US Dollar')
+        driver.find_element(By.ID,'to').send_keys('EUR - Euro')
+        driver.find_element(By.ID,'from').send_keys('USD - US Dollar')
         driver.find_element(By.CSS_SELECTOR,'[href="https://www.x-rates.com/calculator/"]').click()
         
         WebDriverWait(driver,2).until(EC.visibility_of_element_located((By.CLASS_NAME,'ccOutputRslt')))
@@ -36,8 +36,8 @@ def get_rate_front():
 
 
 def test_front_back_rate():
-    rate_back = round(get_rate_back(),2)
-    rate_front = round(get_rate_front(),2)
+    rate_back = round(get_rate_back(), 2)
+    rate_front = round(get_rate_front(), 2)
 
     assert rate_back == rate_front, f"Курсы не совпадают: API {rate_back}, Front {rate_front}"
 
